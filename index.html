@@ -524,7 +524,28 @@
   .review-author { color: var(--text-muted); font-size: 0.9rem; }
   .review-author strong { color: var(--text-primary); }
 
+  .reviews-widgets { display: flex; flex-direction: column; gap: 1.5rem; }
+  .reviews-widget-block {
+    background: var(--bg-dark);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .reviews-widget-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: var(--text-muted);
+    margin-bottom: 0.85rem;
+    padding: 0 0.15rem;
+  }
+  .reviews-widget-label svg { color: var(--accent); flex-shrink: 0; }
   .reviews-widget { min-height: 120px; }
+  @media (max-width: 480px) { .reviews-widget-block { padding: 0.75rem; } }
 
   /* Contact */
   .contact-grid {
@@ -888,9 +909,28 @@
     <h2 class="section-heading fade-up">Reviews</h2>
     <p class="section-sub fade-up">Live from Google &amp; Facebook.</p>
 
-    <div class="reviews-widget fade-up">
-      <div id="JFWebsiteWidget-01a1b1b806b070008c38f6ce741437f4513c"></div>
-      <script src="https://www.jotform.com/website-widgets/embed/01a1b1b806b070008c38f6ce741437f4513c" defer></script>
+    <div class="reviews-widgets">
+      <div class="reviews-widget-block fade-up">
+        <div class="reviews-widget-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12s3.36-7.27 7.19-7.27c3.08 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.19 2C6.42 2 2.03 6.8 2.03 12s4.39 10 10.16 10c5.05 0 9.81-3.55 9.81-9.74 0-.93-.13-1.5-.13-1.5z"/></svg>
+          Google Reviews
+        </div>
+        <div class="reviews-widget">
+          <div id="JFWebsiteWidget-01a1b1b806b070008c38f6ce741437f4513c"></div>
+          <script src="https://www.jotform.com/website-widgets/embed/01a1b1b806b070008c38f6ce741437f4513c" defer></script>
+        </div>
+      </div>
+
+      <div class="reviews-widget-block fade-up">
+        <div class="reviews-widget-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a5 5 0 00-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 011-1h3z"/></svg>
+          Facebook Reviews
+        </div>
+        <div class="reviews-widget">
+          <div id="JFWebsiteWidget-01a1b26ea4b070008db2c2465660f88c1a54"></div>
+          <script src="https://www.jotform.com/website-widgets/embed/01a1b26ea4b070008db2c2465660f88c1a54" defer></script>
+        </div>
+      </div>
     </div>
   </div>
 </section>
