@@ -912,19 +912,25 @@
         </div>
       </div>
 
-      <!-- Contact form: currently opens the visitor's email client via mailto:. Swap the action for a real form backend (Formspree, Netlify Forms, etc.) if needed. -->
-      <form action="mailto:forthestreetsauto@gmail.com" method="post" enctype="text/plain">
+      <!-- Contact form: submits via Formspree (https://formspree.io/forms/xeaawjly) -->
+      <form action="https://formspree.io/f/xeaawjly" method="POST">
+        <input type="hidden" name="_subject" value="New quote request from the FTS website">
+        <!-- Honeypot: real visitors never see or fill this; bots that auto-fill every field will, and Formspree silently drops those submissions. -->
+        <div style="position:absolute; left:-9999px;" aria-hidden="true">
+          <label for="company">Leave this field blank</label>
+          <input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
         <div class="field">
           <label for="name">Name</label>
-          <input type="text" id="name" name="Name" required placeholder="Your name">
+          <input type="text" id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Your name">
         </div>
         <div class="field">
           <label for="phone">Phone</label>
-          <input type="tel" id="phone" name="Phone" required placeholder="Your number">
+          <input type="tel" id="phone" name="phone" required maxlength="30" autocomplete="tel" placeholder="Your number">
         </div>
         <div class="field">
           <label for="message">What's going on with your car?</label>
-          <textarea id="message" name="Message" required placeholder="Tell me the make, model, and issue"></textarea>
+          <textarea id="message" name="message" required maxlength="1000" placeholder="Tell me the make, model, and issue"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Send Message</button>
         <small>Prefer to text? Use the button above for the fastest reply.</small>
